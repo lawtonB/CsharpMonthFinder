@@ -16,13 +16,19 @@ namespace WeekDaynamespace
   {
   }
 
-  public static string monthfinder(int month, int day)
+  public static string monthfinder(int month, int day, int year)
       {
         // int[] array = day.ToIntArray();
-        int rick = month;
+        int test7 = month;
+        int test8 = year;
+
+        int rickjames = test8 - 1810;
+        int dave = rickjames * 52;
+         day = dave * 7;
+         Console.WriteLine(day);
 
           Dictionary<int, int> newdictionary = new Dictionary<int, int> {};
-          newdictionary.Add(1, 0); 
+          newdictionary.Add(1, 1);
           newdictionary.Add(2, 31);
           newdictionary.Add(3, 59);
           newdictionary.Add(4, 90);
@@ -36,9 +42,9 @@ namespace WeekDaynamespace
           newdictionary.Add(12, 334);
 
           foreach ( KeyValuePair<int, int> supatest in newdictionary) {
-             if( rick == supatest.Key)
+             if( test7 == supatest.Key)
             {
-              day += supatest.Value;
+              day += (supatest.Value);
             }
           }
         int test2 = day % 7;
